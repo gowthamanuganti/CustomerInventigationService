@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
 import CMST.*;
-public class Login extends HttpServlet
+public class CustomerLogin extends HttpServlet
 {
 
  public void init(ServletConfig config) throws ServletException

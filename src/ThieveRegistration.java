@@ -16,9 +16,7 @@ public class ThieveRegistration extends HttpServlet
   {
    super.init(config);
   }
-  public void destroy()
-  {
-  }
+  
   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, java.io.IOException
   {
   RequestDispatcher rd=request.getRequestDispatcher("AdminInserted.jsp");
@@ -80,7 +78,7 @@ System.out.println("values id "+nom);
     int rows=pstmt.executeUpdate();
 
 
-    // int th_inserted=CBean.executeUpdate("insert into thieves values(" + thid + ",'" + thName + "','" + tloc + "','" + noy + "','" + tth + "') ");
+    int th_inserted=CBean.executeUpdate("insert into thieves values(" + thid + ",'" + thName + "','" + tloc + "','" + noy + "','" + tth + "') ");
     if(rows==1)
     {
 		 rd.forward(request, response);

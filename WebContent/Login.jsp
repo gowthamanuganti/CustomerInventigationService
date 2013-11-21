@@ -22,10 +22,10 @@ function Go()
 
 if(event.keyCode==13)
 {
- 
-                var uid=f.cLid.value;
-  	       var pwd=f.cPwd.value;
-  	         var oXMLHTTP = new ActiveXObject( "Microsoft.XMLHTTP" );
+ alert('hai');
+        var uid=f.cLid.value;
+  	    var pwd=f.cPwd.value;
+  	    var oXMLHTTP = new ActiveXObject( "Microsoft.XMLHTTP" );
   		var sURL = "./CheckCustomer?uid=" + uid + "&pwd=" + pwd
   		oXMLHTTP.open( "POST", sURL, false );
   		oXMLHTTP.send();
@@ -90,36 +90,32 @@ function CheckLogin()
    alert("Please Enter Password");
       f.cPwd.focus();
    return false;
- }else
- {
- 
+ }else{
+ alert('hai');
 
  
  
  
-               var uid=f.cLid.value;
+            var uid=f.cLid.value;
  	       var pwd=f.cPwd.value;
  	         var oXMLHTTP = new ActiveXObject( "Microsoft.XMLHTTP" );
- 		var sURL = "./CheckCustomer?uid=" + uid + "&pwd=" + pwd
+ 		var sURL = "http://localhost:8088/CIS/CheckCustomer?uid=" + uid + "&pwd=" + pwd;
  		oXMLHTTP.open( "POST", sURL, false );
  		oXMLHTTP.send();
  		var  status=oXMLHTTP.responseText;
  		var s=status;
  		var str="I";
- 		
- 		  
- 	        if(s.charAt(0)==str)
+ 		if(s.charAt(0)==str)
  		{
  		  alert(s);
  		  f.cLid.value="";
  		  f.cPwd.value="";
- 	          f.cLid.focus();
+ 	      f.cLid.focus();
  		  return false;
- 		}else
- 		{
+ 		}else{
  		f.action="ULogin.jsp";
  		f.submit();
-    	        }
+    	}
     	
     	
  
@@ -134,7 +130,7 @@ function Clear()
 {
   f.cLid.value="";
   f.cPwd.value="";
-    f.cLid.focus();
+  f.cLid.focus();
   return false;
 }
 
@@ -159,7 +155,7 @@ a:hover
 <HTML><HEAD><TITLE>Home Page</TITLE>
 <META>
 <BODY  onload="setfocus()">
-<form name=f method=post>
+<form action="CustomerLogin" name=f method="post">
 <TABLE class=tabformat cellSpacing=1 cellPadding=2 width="100%" border=0>
   <TBODY>
   <TR>

@@ -698,9 +698,10 @@ try
    ResultSet dept_rs=null;
    ConnectionBean CBean=new ConnectionBean();
    con=CBean.getConnection();
-   dept_rs=CBean.executeQuery("select nvl(max(department_id),0)+1 from police_department");
+   dept_rs=CBean.executeQuery("select max(department_id)+1 from police_department");
    dept_rs.next();
-   String  dept_no=dept_rs.getString(1);
+   int  dept_no=dept_rs.getInt(1);
+   ++dept_no;
    System.out.println(dept_no);
    dept_rs.close();
    
@@ -708,7 +709,7 @@ try
 
 <body onload="setfocus()">
 <h3>Department Registration Form</h3>
-<form name="f1"  action="DeptRegister" ">
+<form name="f1"  action="DeptRegister" method="post">
 <table border="0" >
 <tr>
 <td class=tabhead2><b>Department Id</b>

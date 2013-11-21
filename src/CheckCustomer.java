@@ -34,7 +34,7 @@ public class CheckCustomer extends GenericServlet
 			    if(login_type.equals("C"))
 			    {
 
-
+                  
 
 				}else
 				{

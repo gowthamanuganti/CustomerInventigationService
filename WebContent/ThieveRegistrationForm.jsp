@@ -827,7 +827,7 @@ a:hover
   <TBODY>
 
 
-<%-- <%
+<%
 try
 {
 
@@ -835,12 +835,13 @@ try
    ResultSet th_rs=null;
    ConnectionBean CBean=new ConnectionBean();
    con=CBean.getConnection();
-   th_rs=CBean.executeQuery("select nvl(max(thieve_id),0)+1 from thieves");
+   th_rs=CBean.executeQuery("select max(thieve_id)+1 from thieves");
    th_rs.next();
-   String  th_no=th_rs.getString(1);
+   int  th_no=th_rs.getInt(1);
+   ++th_no;
    System.out.println(th_no);
    th_rs.close();
-%> --%>
+%>
 
 
 
@@ -849,7 +850,7 @@ try
 <table border="0" width="30%">
 <tr>
       <td class=tabhead2><b>Criminal Id</b> 
-      <td class=tabhead2><input type="text" name="thid" readonly value=<%-- <%=th_no%> --%>></td></tr>
+      <td class=tabhead2><input type="text" name="thid" readonly value=<%=th_no%>></td></tr>
 <tr>
 
 
@@ -891,12 +892,12 @@ Dys<input type="text" name="nod" maxlength=3  size=3 onkeyup="NoCheck(this)"  on
 <td><input type=submit value="Register" onclick="return CheckInput()">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  "></td>
 </tr>
 </table>
-<%-- <%
+<%
 }catch(Exception ex)
 {
      out.println("Error At " + ex);
 }
-%> --%>
+%>
 
 
   <br>
