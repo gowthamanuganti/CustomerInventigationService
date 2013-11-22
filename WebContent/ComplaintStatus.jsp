@@ -119,8 +119,13 @@ a:hover
 try
 {
 
- 
-	int regid=Integer.parseInt(session.getValue("regid") + "");
+String regid=null;
+if(session.getAttribute("regid") == null){
+response.sendRedirect("Login.jsp");
+}else{
+	regid=(String)session.getAttribute("regid");
+}
+//	int regid1=Integer.parseInt(session.getValue("regid") + "");
  
  Connection con=null;
  ResultSet rs=null;

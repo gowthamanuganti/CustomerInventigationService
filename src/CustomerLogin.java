@@ -18,6 +18,7 @@ public class CustomerLogin extends HttpServlet
  @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+	 HttpSession session = req.getSession() ;
 	 RequestDispatcher rd=null;
 	 try
 	  {
@@ -30,9 +31,12 @@ public class CustomerLogin extends HttpServlet
 	    if(custrs.next())
 	    {
 	    	 String cid=custrs.getString(1);
-	    	 req.setAttribute("cid",cid);
-	 
+	    	
+	    	 System.out.println("cid==="+cid);
+	    	 /*req.setAttribute("cid",cid);*/
+	         session.setAttribute("regid", cid);
 	    	 String login_type=custrs.getString(2);
+	    	
 	    	 if(login_type.equals("C"))
 	    	 {
 				System.out.println("Is  Valid");
@@ -46,6 +50,7 @@ public class CustomerLogin extends HttpServlet
 			  rd=req.getRequestDispatcher("Login.jsp");
 	    }
 	    rd.forward(req, resp);
+	    
 	  }catch(Exception ex)
 	  {
 	     System.out.println(ex);

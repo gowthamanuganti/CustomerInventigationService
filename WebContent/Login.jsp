@@ -77,7 +77,7 @@ a:hover {
 
 		<h3>Customer Login</h3>
 		<br>
-		<table border="10">
+		<table border="0">
 			<tr>
 				<td class=tabhead2><b>Login Name :</b>
 				<td class=tabhead2><input type="text" name="cLid" size=20

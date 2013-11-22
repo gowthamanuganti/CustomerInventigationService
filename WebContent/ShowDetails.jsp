@@ -583,7 +583,7 @@ try
 </tr>
 
 </form>
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </body>
 </html>
