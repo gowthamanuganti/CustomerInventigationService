@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.util.*;
 import CMST.*;
 import java.io.*;
+import javax.servlet.http.Part;
 public class ThieveRegistration extends HttpServlet
 {
 
@@ -26,7 +27,6 @@ public class ThieveRegistration extends HttpServlet
   String thName=request.getParameter("thName");
   String tloc=request.getParameter("tloc");
   noy=request.getParameter("noy");
-
   nom=request.getParameter("nom");
   nod=request.getParameter("nod");
 
@@ -56,7 +56,7 @@ System.out.println("values id "+nom);
 
 
   String tth=request.getParameter("tth");
-  String image=request.getParameter("photo");
+  Part image=request.getParameter("photo");
 
 
   try
@@ -71,10 +71,7 @@ System.out.println("values id "+nom);
     pstmt.setString(3,tloc);
     pstmt.setString(4,ws);
     pstmt.setString(5,tth);
-    File f=new File(image);
-
-	FileInputStream fis=new FileInputStream(f);
-	pstmt.setBinaryStream(6,fis,(int) f.length());
+    pstmt.setBinaryStream(6,image.getInputStream(), (int)  image.getSize());
     int rows=pstmt.executeUpdate();
 
 
