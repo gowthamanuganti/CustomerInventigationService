@@ -304,7 +304,7 @@ if(status.equals("Pending"))
 <br>
 <br>
 
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </BODY>
 </HTML>

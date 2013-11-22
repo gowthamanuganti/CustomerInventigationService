@@ -843,10 +843,10 @@ try
    th_rs.close();
 %>
 
-
+	
 
 <h3>Criminal Registration Form</h3>
-<form name="f1"  action="ThRegister">
+<form name="f1"  action="ThRegister" enctype="multipart/form-data"  method="POST" >
 <table border="0" width="30%">
 <tr>
       <td class=tabhead2><b>Criminal Id</b> 

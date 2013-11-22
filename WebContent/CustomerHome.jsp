@@ -78,7 +78,7 @@ String CustName="";
 <br>
 <br>
 
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 
 </BODY></HTML>

@@ -211,9 +211,10 @@ try
    ResultSet ar_rs=null;
    ConnectionBean CBean=new ConnectionBean();
    con=CBean.getConnection();
-   cmp_rs=CBean.executeQuery("select nvl(max(complaint_id),0)+1 from complaint_reg");
+   cmp_rs=CBean.executeQuery("select max(complaint_id)+1 from complaint_reg");
    cmp_rs.next();
-   String  cmp_no=cmp_rs.getString(1);
+   int  cmp_no=cmp_rs.getInt(1);
+   ++cmp_no;
    System.out.println(cmp_no);
    cmp_rs.close();
    ar_rs=CBean.executeQuery("select area from police_department order by department_id");
@@ -276,7 +277,7 @@ while(ar_rs.next())
 
 
 </form>
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </body>
 </html>
