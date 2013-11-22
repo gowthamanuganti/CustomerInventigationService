@@ -1,7 +1,7 @@
 <title>Customer Login Form</title>
 
 
-<script
+<!-- <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 	
 </script>
@@ -10,6 +10,14 @@
 		$("#login").click(function() {
 			var cLid = $('#cLid').val();
 			var cPwd = $('#cPwd').val();
+			if(cLid==""){
+				alert('please enter your username');
+				return false;
+			}
+			else	 if(cPwd==""){
+				alert('please enter your password');
+				return false;
+			}
 			alert('username=' + cLid + 'password=' + cPwd);
 			$.ajax({
 
@@ -18,16 +26,21 @@
 				async : false,
 				success : function(data) {
 					var result = data;
-					
 					alert("asdgasjgdjashgd: "+result);
-					var successUrl = "CustomerHome.jsp"; // might be a good idea to return this URL in the successful AJAX call
-				    window.location.href = successUrl;
+					if(result="Invalid Login Information"){
+						var login = "Login.jsp";	
+						 window.location.href = login;
+					}else{
+						var successUrl = "CustomerHome.jsp"; // might be a good idea to return this URL in the successful AJAX call
+					    window.location.href = successUrl;
+					}
+					
 
 				}
 			});
 		});
 	});
-</script>
+</script> -->
 
 
 <style>
@@ -64,7 +77,7 @@ a:hover {
 
 		<h3>Customer Login</h3>
 		<br>
-		<table border="0">
+		<table border="10">
 			<tr>
 				<td class=tabhead2><b>Login Name :</b>
 				<td class=tabhead2><input type="text" name="cLid" size=20
@@ -81,7 +94,7 @@ a:hover {
 
 			<tr>
 				<td><center>
-						<input type=button value="  Login  " id="login">&nbsp;&nbsp;&nbsp;&nbsp;<input
+						<input type="submit" value="  Login  " id="login">&nbsp;&nbsp;&nbsp;&nbsp;<input
 							type="reset" value="  Clear " style="cursor: hand"
 							onclick="return Clear()" height="50"></img>
 					</center></td>

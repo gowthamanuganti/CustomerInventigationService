@@ -16,7 +16,6 @@
           String regid=custrs.getString(1);
     	  session.putValue("regid",regid);
     	  
-    	  
     	  String uid=custrs.getString(3);
     	  String pwd=custrs.getString(4);
     	  
