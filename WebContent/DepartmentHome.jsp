@@ -43,7 +43,8 @@ a:hover
   <br>
   <br>
   <%
-  System.out.println(session.getValue("regid")+"");
+  String regid=session.getValue("regid")+"";
+  
 %>
 </DIV>
 <jsp:include page="Footer.jsp" />

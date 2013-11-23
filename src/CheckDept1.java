@@ -13,7 +13,8 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	
 	{
 			PrintWriter out = response.getWriter();
-			RequestDispatcher rd=null;
+			HttpSession session = request.getSession() ;
+			 RequestDispatcher rd=null;
           //=request.getRequestDispatcher("AdminHome.jsp");
 
 
@@ -33,23 +34,25 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 
              if(custrs.next())
 			 {
+            	 String regid=custrs.getString(1);
+            	 System.out.println("regid==="+regid);
 			  String login_type=custrs.getString(2);
 
 			    if(login_type.equals("D"))
 			    {
+			    	session.setAttribute("regid", regid);
 			    	rd=request.getRequestDispatcher("DepartmentHome.jsp");
-
+			    	rd.forward(request, response);
 
 				}else
 				{
 
-				 out.println("Invalid Login Information");
-
+					rd=request.getRequestDispatcher("DLogin.jsp");
 				}
 			 }else
 			 {
 
-				 	 out.println("Invalid Login Information");
+				 rd=request.getRequestDispatcher("DLogin.jsp");
 
 
 			 }

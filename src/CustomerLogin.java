@@ -41,6 +41,7 @@ public class CustomerLogin extends HttpServlet
 	    	 {
 				System.out.println("Is  Valid");
 	    	 	rd=req.getRequestDispatcher("CustomerHome.jsp");
+	    	 	rd.forward(req, resp);
 	    	 }else
 	    	 {
 	    	   rd=req.getRequestDispatcher("Login.jsp");

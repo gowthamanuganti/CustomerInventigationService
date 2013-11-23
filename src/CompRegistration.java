@@ -49,7 +49,7 @@ public class CompRegistration extends HttpServlet{
 					ConnectionBean CBean=new ConnectionBean();
 				    Connection con=CBean.getConnection();
 				    Statement stmt=con.createStatement();
-					rs = stmt.executeQuery("select department_id from police_department where area='" + area  + "' ");
+				    rs = stmt.executeQuery("select department_id from police_department where area='" + area  + "' ");
 					rs.next();
 					String deptid=rs.getString(1);
 				    System.out.println(deptid + "department");
@@ -59,12 +59,13 @@ public class CompRegistration extends HttpServlet{
 				    rs.close();
 				    int inserted;
 				    inserted = CBean.executeUpdate("insert into complaint_reg values('" + cmpno + "','" + pdes + "','" + stats + "','" + cid + "','" + deptid + "','" + ctype + "','"+myDate+ "') ");
-				   /* if(inserted==1)
+				    if(inserted==1)
 				    {
 				    	System.out.println("hai registered");
 				    	dispatcher=req.getRequestDispatcher("CustomerInserted.jsp");
+				    	dispatcher.forward(req, resp);
 				    	
-				    }*/
+				    }
 				} catch (SQLException e2) {
 					System.out.println(e2);
 					e2.printStackTrace();
