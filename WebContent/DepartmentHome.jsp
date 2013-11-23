@@ -46,6 +46,6 @@ a:hover
   System.out.println(session.getValue("regid")+"");
 %>
 </DIV>
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </BODY></HTML>

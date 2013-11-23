@@ -240,7 +240,7 @@ String Wants=Yrs+Mns+Dys;
 
 </form>
 
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </BODY>
 </HTML>

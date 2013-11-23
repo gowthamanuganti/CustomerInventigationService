@@ -1,7 +1,7 @@
 <title>Department Login Form</title>
 
 
-<script>
+<!-- <script>
 function CheckLogin()
 {
  if(f.cLid.value=="")
@@ -92,7 +92,7 @@ function Clear()
   return false;
 }
 
-</script>
+</script> -->
 
 <style>
 a
@@ -115,7 +115,7 @@ a:hover
 <HTML><HEAD><TITLE>Home Page</TITLE>
 <META>
 <BODY  onload="setfocus()"><A name=Entity_1></A>
-<form name=f method=post>
+<form name=f action="DeptLogin" method=post >
   <DIV class=caption1></DIV>
 <TABLE class=tabformat cellSpacing=1 cellPadding=2 width="100%" border=0>
   <TBODY>
@@ -142,7 +142,7 @@ a:hover
 <td class=tabhead2><input type=password name="cPwd" size=20 maxlength=20 class="pwdstyle" onkeydown="Go()"   ></td></tr>
 <tr>
 <td><center>
-             <input type=button value="  Login  " onclick="return CheckLogin()" o>&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="  Clear "  style={cursor:hand} onclick="return Clear()" height="30"></img> 
+             <input type="submit" value="  Login  "  >&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="  Clear "  style={cursor:hand} onclick="return Clear()" height="30"></img> 
              
         </center></td>
 </tr>

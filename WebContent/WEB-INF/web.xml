@@ -80,6 +80,15 @@
 	<servlet-name>CheckDept1</servlet-name>
 	<url-pattern>/CheckDept1</url-pattern>
 </servlet-mapping>
+<servlet>
+   <servlet-name>DeptLogin</servlet-name>
+   <servlet-class>CheckDept1</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>DeptLogin</servlet-name>
+	<url-pattern>/DeptLogin</url-pattern>
+</servlet-mapping>
 
 
 <servlet>

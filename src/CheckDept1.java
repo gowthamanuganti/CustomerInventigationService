@@ -1,16 +1,20 @@
 import javax.servlet.*;
 import javax.servlet.http.*;
+
 import java.io.*;
 import java.util.*;
 import java.sql.*;
 import CMST.*;
 
-public class CheckDept1 extends GenericServlet
+public class CheckDept1 extends HttpServlet
 {
-	public void service(ServletRequest request,ServletResponse response) throws ServletException, IOException
+@Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
+	
 	{
 			PrintWriter out = response.getWriter();
-         //   RequestDispatcher rd=request.getRequestDispatcher("AdminHome.jsp");
+			RequestDispatcher rd=null;
+          //=request.getRequestDispatcher("AdminHome.jsp");
 
 
 			try
@@ -20,8 +24,8 @@ public class CheckDept1 extends GenericServlet
 	        ConnectionBean CBean=new ConnectionBean();
             Connection con=CBean.getConnection();
 			response.setContentType("text/html");
-			String uid = request.getParameter("uid");
-            String pwd = request.getParameter("pwd");
+			String uid = request.getParameter("cLid");
+            String pwd = request.getParameter("cPwd");
             System.out.println("user uid" +uid);
             System.out.println("pwd uid" +pwd);
 
@@ -33,7 +37,7 @@ public class CheckDept1 extends GenericServlet
 
 			    if(login_type.equals("D"))
 			    {
-
+			    	rd=request.getRequestDispatcher("DepartmentHome.jsp");
 
 
 				}else

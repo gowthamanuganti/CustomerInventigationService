@@ -95,7 +95,7 @@ while(rs.next())
 
 
 
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </BODY>
 </HTML>
