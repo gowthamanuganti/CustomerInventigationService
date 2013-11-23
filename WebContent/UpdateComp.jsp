@@ -325,7 +325,7 @@ String ctype=rs.getString(6);
 
 
 </form>
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </body>
 </html>

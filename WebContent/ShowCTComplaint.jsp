@@ -127,7 +127,7 @@ try
  String ctype=request.getParameter("ctype");
  
  
- rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,to_char(c.cdate,'dd-mm-yyyy') from complaint_reg c ,police_department p  where c.customer_id=" + regid + " and p.department_id=c.department_id and c.ctype='" + ctype + "' order by complaint_id ");
+ rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,c.cdate from complaint_reg c ,police_department p  where c.customer_id=" + regid + " and p.department_id=c.department_id and c.ctype='" + ctype + "' order by complaint_id ");
 %>
 
 <center><h3 >COMPLAINT STATUS INFORMATION</h3> </center>
