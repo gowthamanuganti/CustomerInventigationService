@@ -166,29 +166,8 @@ String Wants=Yrs+Mns+Dys;
 
 
 
-<%
-    byte picData[]=rs.getBytes(6);
-    FileOutputStream fos=new FileOutputStream("e:\\jakarta-tomcat-5.5.9\\webapps\\OCR1\\img\\"+  i  + ".bmp");
-	fos.write(picData);
-		fos.close();
-		out.print("<td class=tabhead1><img src='./img/");
-		out.print(i);
-		out.print(".bmp");
-		out.print("'");
-		
-		out.print(" id=");
-		out.print(i);
-		out.print(" ");
-		
-		out.print("width=25  style={cursor:hand} onclick='ShowImage()' ");
-		
-	    out.print(">");
-			
-	out.println("</td>");
-	
-	i++;
-%>
-
+<td class=tabhead1><img src="<%=rs.getBlob(6) %>"></td>
+ 
 </tr>
 <%
 }

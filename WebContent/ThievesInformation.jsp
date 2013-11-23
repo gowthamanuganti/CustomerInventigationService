@@ -36,141 +36,119 @@ function Update(tid)
   window.open("UpdateThieve.jsp?tid="+ tid + " ","popup","width=600,height=400")
 }
 </script>
-<%@page import="java.sql.*,CMST.*" %>
+<%@page import="java.sql.*,CMST.*"%>
 <style>
-a
-{
-           color:"Black";
-           text-decoration:none;
+a {
+	color: "Black";
+	text-decoration: none;
 }
-a:hover
-{
-            color:Gray;
-            text-decoration:underline;
 
+a:hover {
+	color: Gray;
+	text-decoration: underline;
 }
 </style>
 <jsp:include page="ThInfoHeader.jsp" />
-<HTML><HEAD><TITLE>Criminal Information</TITLE>
+<HTML>
+<HEAD>
+<TITLE>Criminal Information</TITLE>
 <META>
 <LINK href="css/styles.css" type=text/css rel=stylesheet>
 <form name=f>
-<TR>
-<td>
-<%
-String cat=request.getParameter("catth");
-System.out.println("value is" +cat);
-try
-{
- int i=1;	 
- Connection con=null;
- ResultSet rs=null;
- ConnectionBean CBean=new ConnectionBean();
- con=CBean.getConnection();
- 
-if((cat==null) || cat.equals("All"))
-{
+	<TR>
+		<td>
+			<%
+				String cat = request.getParameter("catth");
+				System.out.println("value is" + cat);
+				try {
+					int i = 1;
+					Connection con = null;
+					ResultSet rs = null;
+					ConnectionBean CBean = new ConnectionBean();
+					con = CBean.getConnection();
 
- rs=CBean.executeQuery("select * from thieves order by thieve_id");
-}else
-{
- rs=CBean.executeQuery("select * from thieves where  type_th='" + cat + "' order by thieve_id");
-}
+					if ((cat == null) || cat.equals("All")) {
 
-
-%>
+						rs = CBean
+								.executeQuery("select * from thieves order by thieve_id");
+					} else {
+						rs = CBean
+								.executeQuery("select * from thieves where  type_th='"
+										+ cat + "' order by thieve_id");
+					}
+			%>
 
 
-<center><h3>CRIMINAL INFORMATION DETAILS</h3> </center>
-<table align=center border=1 colspace=10>
-<th class=tabhead3 >Criminal Id
-<th class=tabhead3 >Criminal Name
-<th class=tabhead3 >Criminal Location
-<th class=tabhead3 >Wanted Since
-<th class=tabhead3 >Type of Crime
-<th class=tabhead3 >Photo
-<th class=tabhead3 >Check
-<%
-while(rs.next())
-{
-	OutputStream oImage;
- String tid=rs.getString(1);
-%>
-<tr>
-<td class=tabhead1><%=tid%></td>
-<td class=tabhead1><%=rs.getString(2) %></td>
-<td class=tabhead1><%=rs.getString(3) %></td>
-<%
-String Yrs="Yrs";
-String Mns="Mns";
-String Dys="Dys";
+			<center>
+				<h3>CRIMINAL INFORMATION DETAILS</h3>
+			</center>
+			<table align=center border=1 colspace=10>
+				<th class=tabhead3>Criminal Id
+				<th class=tabhead3>Criminal Name
+				<th class=tabhead3>Criminal Location
+				<th class=tabhead3>Wanted Since
+				<th class=tabhead3>Type of Crime
+				<th class=tabhead3>Photo
+				<th class=tabhead3>Check <%
+					while (rs.next()) {
+							OutputStream oImage;
+							String tid = rs.getString(1);
+				%>
+				<tr>
+					<td class=tabhead1><%=tid%></td>
+					<td class=tabhead1><%=rs.getString(2)%></td>
+					<td class=tabhead1><%=rs.getString(3)%></td>
+					<%
+						String Yrs = "Yrs";
+								String Mns = "Mns";
+								String Dys = "Dys";
 
-String wsp=rs.getString(4);
-int cnt=1;
+								String wsp = rs.getString(4);
+								int cnt = 1;
 
-  StringTokenizer st = new StringTokenizer(wsp,",");
-  
-     while (st.hasMoreTokens()) 
-     
-     {
+								StringTokenizer st = new StringTokenizer(wsp, ",");
 
-       if(cnt==1)
-           Yrs=st.nextToken() + "-" +Yrs ;
-       if(cnt==2)
-           Mns="," + st.nextToken() + "-" + Mns;
-       if(cnt==3)
-           Dys="," + st.nextToken() + "-" +Dys;
-           cnt=cnt+1;
-           
-     }
- 
+								while (st.hasMoreTokens())
 
-String Wants=Yrs+Mns+Dys;
+								{
 
+									if (cnt == 1)
+										Yrs = st.nextToken() + "-" + Yrs;
+									if (cnt == 2)
+										Mns = "," + st.nextToken() + "-" + Mns;
+									if (cnt == 3)
+										Dys = "," + st.nextToken() + "-" + Dys;
+									cnt = cnt + 1;
 
-%>
+								}
+
+								String Wants = Yrs + Mns + Dys;
+					%>
 
 
-<td class=tabhead1><%=Wants%></td>
+					<td class=tabhead1><%=Wants%></td>
 
 
 
-<td class=tabhead1><%=rs.getString(5) %></td>
+					<td class=tabhead1><%=rs.getString(5)%></td>
 
-<td class=tabhead1>
-<img src="image.jsp?imgid=<%byte picData[]=rs.getBytes(6);	
-%>" width="50" height="50">  
-<%-- <%
+				<td class=tabhead1><img src="<%=rs.getBlob(6) %>"></td>
+					<td class=tabhead1><a style="cursor: hand"
+						onclick="Update(<%=tid%>)">Update</a></td>
+				</tr>
+				<%
+					}
+					} catch (Exception ex) {
+				%>
 
-
-    byte picData[]=rs.getBytes(6);
-/* response.setContentType("i	mage/gif"); */
-oImage=response.getOutputStream();
-byte barray[] = rs.getBytes(6);
-oImage.write(barray);
-oImage.flush();
-oImage.close();
- 
-	
-	
-%> --%>
-</td>
-<td class=tabhead1><a style={cursor:hand} onclick="Update(<%=tid%>)">Update</a></td>
-</tr>
-<%
-}
-}catch(Exception ex)
-{
-%>
- 
-<%
-  out.println("Error While Connecting DataBase" + ex);
-}
-%>
-</table>
+				<%
+					out.println("Error While Connecting DataBase" + ex);
+					}
+				%>
+			</table>
 
 
-</body>
+			</body>
 </html>
 
 
@@ -183,8 +161,9 @@ oImage.close();
 
 
 
-  </TR>
-</TBODY></TABLE>
+</TR>
+</TBODY>
+</TABLE>
 
 
 
@@ -195,23 +174,19 @@ oImage.close();
 <br>
 <br>
 <table>
-<tr>
-<td class=tabhead1>Search Criminal Information</td>
-</tr>
-<tr>
- <td class=tabhead1>Select Criminal Category</td>
-<td><Select name=catth class=tabhead1 >
-<option selected >Select Category</option>
-<option>Crime</option>
-<option>Civil</option>
-<option>Pick Pocketers</option>
-<option>All</option>
-<td>
-
-
-<input type=button value="  Show  " style={cursor:hand} onclick="Check()">
-
-
+	<tr>
+		<td class=tabhead1>Search Criminal Information</td>
+	</tr>
+	<tr>
+		<td class=tabhead1>Select Criminal Category</td>
+		<td><Select name=catth class=tabhead1>
+				<option selected>Select Category</option>
+				<option>Crime</option>
+				<option>Civil</option>
+				<option>Pick Pocketers</option>
+				<option>All</option>
+				<td><input type=button value="  Show  " style="cursor: hand"
+					onclick="Check()">
 </table>
 
 <br>
