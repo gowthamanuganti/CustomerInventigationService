@@ -21,7 +21,7 @@ public class CompRegister extends HttpServlet
   String pdes=request.getParameter("pdes");
   String area=request.getParameter("area");
 
-  //int cid=Integer.parseInt(session.getValue("regid") + "");
+//  /int cid=Integer.parseInt(session.getValue("regid") + "");
 
 
   try

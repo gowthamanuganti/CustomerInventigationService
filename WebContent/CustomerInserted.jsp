@@ -11,7 +11,7 @@ a:hover
 
 }
 </style>
-<jsp:include page="CustHeader.jsp" />
+
 <HTML><HEAD><TITLE>Home Page</TITLE>
 <META>
 <BODY class=rightPage>

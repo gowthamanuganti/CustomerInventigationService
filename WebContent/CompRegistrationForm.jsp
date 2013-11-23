@@ -1,5 +1,18 @@
 <title>Complaint Registration Form</title>
-
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$('#compreg').click(function(){
+		var date=$('#date').val();
+		if(date==" "){
+			date=new Date();
+			alert(date);
+		}
+	});
+});
+</script>
 
 <script>
 function CheckInput()
@@ -221,11 +234,12 @@ try
 %>
 
 <h3>Customer Complaint Registration </h3>
-<form name="f1" action="CompRegister.jsp" ">
+<form name="f1" action="CompRegister" method="post">
 <table border="0">
 <tr>
 <td class=tabhead2><b>Complaint Id:</b>
 <td class=tabhead2><input type="text" name="cno" readonly value=<%=cmp_no%>></td></tr>
+<td class=tabhead2><input type="hidden" name="date"  id="date"></td></tr>
 <td class=tabhead2><b>Problem Description</b></td>
 <td class=tabhead2><textarea name="pdes" rows=10 cols=50 onkeyup="CharCheck(this)" onblur="its_whitespace(this)"></textarea></td></tr>
 <td class=tabhead2><b>Area</b></td>
@@ -266,7 +280,7 @@ while(ar_rs.next())
 </tr>
 </td>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value="Register" onclick="return CheckInput()">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  " ></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value="Register" onclick="return CheckInput()" id="compreg">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  " ></td>
 </tr>
 </table>
 <br>

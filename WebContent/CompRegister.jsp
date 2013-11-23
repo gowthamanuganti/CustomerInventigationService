@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <html>
 <body>
 <form >
@@ -7,11 +9,17 @@
   String cmpno=request.getParameter("cno");
   String pdes=request.getParameter("pdes");
   String area=request.getParameter("area");
-  
+  String date=request.getParameter("date");
+  SimpleDateFormat format=new SimpleDateFormat("12:01:11 11:01");
+  format.format(date);
   String cid=session.getValue("regid") + "";
+  if(cid==null){
+	  %>
+	     <jsp:forward page="Login.jsp" />
+	<% 
+  }else{
     
   String ctype=request.getParameter("ctype");
-  
   System.out.println(cid + "");
   try
   {
@@ -27,7 +35,7 @@
     String stats="Pending";
     
     rs.close();
-    int inserted=CBean.executeUpdate("insert into complaint_reg values(" + cmpno + ",'" + pdes + "','" + stats + "'," + cid + ",'" + deptid + "','" + ctype + "',sysdate) ");
+    int inserted=CBean.executeUpdate("insert into complaint_reg values('" + cmpno + "','" + pdes + "','" + stats + "','" + cid + "','" + deptid + "','" + ctype + "','"+date+ "') ");
     if(inserted==1)
     {
 %>
@@ -37,6 +45,7 @@
   }catch(Exception ex)
   {
     System.out.println("Error"+ ex);
+  }
   }
 %>
 

@@ -92,7 +92,15 @@
 	<url-pattern>/DeptRegister</url-pattern>
 </servlet-mapping>
 
+<servlet>
+   <servlet-name>CompRegister</servlet-name>
+   <servlet-class>CompRegistration</servlet-class>
+</servlet>
 
+<servlet-mapping>
+	<servlet-name>CompRegister</servlet-name>
+	<url-pattern>/CompRegister</url-pattern>
+</servlet-mapping>
 
 
 <servlet>
