@@ -95,7 +95,7 @@ if(sts!=null)
 try
 {
   
-  rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,to_char(c.cdate,'dd-mm-yyyy') from complaint_reg c ,police_department p  where c.department_id='" + regid + "' and p.department_id=c.department_id  order by complaint_id ");
+  rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,c.cdate from complaint_reg c ,police_department p  where c.department_id='" + regid + "' and p.department_id=c.department_id  order by complaint_id ");
 %>
 
 <center><h3 >REQUESTED COMPLAINT INFORMATION</h3> </center>

@@ -846,7 +846,8 @@ try
 	
 
 <h3>Criminal Registration Form</h3>
-<form name="f1"  action="ThRegister" enctype="multipart/form-data"  method="POST" >
+<form action="ThRegister"  enctype="multipart/form-data" method="post" name="f1">
+
 <table border="0" width="30%">
 <tr>
       <td class=tabhead2><b>Criminal Id</b> 
@@ -887,7 +888,7 @@ Dys<input type="text" name="nod" maxlength=3  size=3 onkeyup="NoCheck(this)"  on
 	</td></tr>
 <tr>
       <td class=tabhead2><b>Criminal Photo</b></td>
-<td class=tabhead2><input type=file  name="photo" ></td></tr>
+<td class=tabhead2><input type="file"  name="photo" ></td></tr>
 <tr>
 <td><input type=submit value="Register" onclick="return CheckInput()">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  "></td>
 </tr>
