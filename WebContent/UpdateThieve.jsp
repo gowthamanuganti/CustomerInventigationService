@@ -793,7 +793,7 @@ function Close()
 
 
 
-<form name="f1" method=post  action="UpdateThieve" ">
+<form name="f1"  action="UpdateThieve" enctype="multipart/form-data" method=post >
 <TABLE class=tabformat width="20%" border=0>
 
   <TBODY>
@@ -924,7 +924,7 @@ if(cat.equals("Pick Pocketers"))
 <tr>
 
 <td class=tabhead1><b>Criminal Photo</b></td>
-<td class=tabhead1><input type=file  name="photo" onkeyup="Stop()"></td></tr>
+<td class=tabhead1><input type="file"  name="photo" onkeyup="Stop()"></td></tr>
 <tr>
 
 <tr>

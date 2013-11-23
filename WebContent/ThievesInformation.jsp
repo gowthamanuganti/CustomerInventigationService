@@ -93,6 +93,7 @@ if((cat==null) || cat.equals("All"))
 <%
 while(rs.next())
 {
+	OutputStream oImage;
  String tid=rs.getString(1);
 %>
 <tr>
@@ -136,33 +137,24 @@ String Wants=Yrs+Mns+Dys;
 
 <td class=tabhead1><%=rs.getString(5) %></td>
 
-
-
-<%
+<td class=tabhead1>
+<img src="image.jsp?imgid=<%byte picData[]=rs.getBytes(6);	
+%>" width="50" height="50">  
+<%-- <%
 
 
     byte picData[]=rs.getBytes(6);
-    
-    FileOutputStream fos=new FileOutputStream("e:\\Tomcat 5.5\\webapps\\cis\\img\\"+  i  + ".bmp");
-	fos.write(picData);
-	fos.close();
-	out.print("<td class=tabhead1><img src='./img/");
-	out.print(i);
-	out.print(".bmp");
-	out.print("'");
+/* response.setContentType("i	mage/gif"); */
+oImage=response.getOutputStream();
+byte barray[] = rs.getBytes(6);
+oImage.write(barray);
+oImage.flush();
+oImage.close();
+ 
 	
-	out.print(" id=");
-	out.print(i);
-	out.print(" ");
 	
-	out.print("width=25 style={cursor:hand} onclick='ShowImage()' ");
-	
-    out.print(">");
-		
-	out.println("</td>");
-	
-	i++;
-%>
+%> --%>
+</td>
 <td class=tabhead1><a style={cursor:hand} onclick="Update(<%=tid%>)">Update</a></td>
 </tr>
 <%
