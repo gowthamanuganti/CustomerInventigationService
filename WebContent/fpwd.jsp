@@ -4,7 +4,7 @@
 
 <jsp:include page="LoginHeader.jsp" />
 
-<script>
+<!-- <script>
 
 function setfocus()
 {
@@ -98,7 +98,7 @@ function Clear()
   return false;
 }
 
-</script>
+</script> -->
 
 <style>
 a
@@ -119,7 +119,7 @@ a:hover
 <HTML><HEAD><TITLE>Home Page</TITLE>
 <META>
 <BODY  onload="setfocus()" >
-<form name=f method="post" >
+<form name=f method="post" action="ShowPwd.jsp">
 <TABLE class=tabformat cellSpacing=1 cellPadding=2 width="100%" border=0>
   <TBODY>
   <TR>
@@ -156,7 +156,7 @@ a:hover
 <tr>
 <td><center>
 
-        <input type=button value="  Submit  " onclick="return CheckLogin()" >&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="  Clear "  style={cursor:hand} onclick="return Clear()" height="30"></img> 
+        <input type="submit" value="  Submit  "  >&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="  Clear "  style={cursor:hand} onclick="return Clear()" height="30"></img> 
         </center></td>
 
 </tr>

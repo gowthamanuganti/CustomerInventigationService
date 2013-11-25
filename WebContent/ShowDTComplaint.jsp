@@ -137,7 +137,7 @@ try
  System.out.println(tdt);
  
  
- rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,c.cdate from complaint_reg c ,police_department p  where c.customer_id=" + regid + " and p.department_id=c.department_id and to_date(c.cdate,'dd-Mon-yy')  between  '" + fdt + "'  and '" + tdt + "' ");
+ rs=CBean.executeQuery("select c.complaint_id,c.prob_desc,c.status,p.area,c.ctype,c.cdate from complaint_reg c ,police_department p  where c.customer_id=" + regid + " and p.department_id=c.department_id and c.cdate  between  '" + fdt + "'  and '" + tdt + "' ");
 
 %>
 

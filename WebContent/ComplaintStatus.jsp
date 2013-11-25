@@ -243,7 +243,7 @@ if(status.equals("Pending"))
         <input type="text" name="tdt"  value="" maxlength=30 size=12  >
         <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.f.tdt);
 				 return false;" HIDEFOCUS tabIndex=5>
-			<img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">
+			<img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">Date Format:dd/mm/yyyy
 			
 			
 			
