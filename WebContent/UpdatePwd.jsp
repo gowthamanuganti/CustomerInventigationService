@@ -31,7 +31,7 @@ try
   String uid=request.getParameter("txtuid");
   String txtopwd=request.getParameter("txtopwd");
     
-  int updated=CBean.executeUpdate("update login_master set user_pwd='" + txtnpwd + "' where user_id='" + uid + "' and user_pwd='" + txtopwd + "' ");
+  int updated=CBean.executeUpdate("update login_master set user_pwd='" + txtnpwd + "' where user_id='" + uid + "' ");
   
   
   
@@ -69,7 +69,7 @@ try
 <br>
 
 
-<jsp:include page="Footer.htm" />
+<jsp:include page="Footer.jsp" />
 
 </body>
 </html>

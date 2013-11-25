@@ -224,10 +224,10 @@ if(status.equals("Pending"))
 
 <TD ALIGN=left><b><input type=checkbox value="Check" class=tabhead1 name=dtw >DateWise     &nbsp;&nbsp; &nbsp;&nbsp;
  &nbsp;&nbsp;
-  &nbsp;&nbsp;
+  &nbsp;&nbsp;	
    &nbsp;&nbsp;
    From</b></td><td>
-        <input type="text" name="fdt" readonly value="" maxlength=30 size=12  >
+        <input type="text" name="fdt"  value="" maxlength=30 size=12  >
         <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.f.fdt);
 				 return false;" HIDEFOCUS tabIndex=5>
 			<img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">
@@ -240,7 +240,7 @@ if(status.equals("Pending"))
   <b> To</b></td><td>
   
   
-        <input type="text" name="tdt" readonly value="" maxlength=30 size=12  >
+        <input type="text" name="tdt"  value="" maxlength=30 size=12  >
         <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.f.tdt);
 				 return false;" HIDEFOCUS tabIndex=5>
 			<img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">

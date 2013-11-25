@@ -82,14 +82,14 @@ if(obj.value=="" || obj.value==null)
 }
 
 
-if(obj.value!=f1.txtoldpwd.value)
+/* if(obj.value!=f1.txtoldpwd.value)
 	{
 	  alert("Invalid Old Password");
 	  obj.value="";
 	  obj.focus();
 	  
 	  return false;
-	 }
+	 } */
 	  
 	  
 }
@@ -216,11 +216,11 @@ try
 <tr>
 
 <td class=tabhead2><b>Old Password</b></td>
-<td class=tabhead2><input type=password name=txtopwd  onblur="Check(this)" size=20 maxlength=20 class="pwdstyle" ></td>
+<td class=tabhead2><input type=password name="txtopwd"  onblur="Check(this)" size=20 maxlength=20 class="pwdstyle" ></td>
 
-<td class=tabhead2><input type=hidden name=txtuid  value=<%=uid%> size=20 maxlength=20 class="pwdstyle" ></td>
+<td class=tabhead2><input type=hidden name="txtuid"  value=<%=uid%> size=20 maxlength=20 class="pwdstyle" ></td>
 
-<td class=tabhead2><input type=hidden name=txtoldpwd value=<%=pwd%> size=20 maxlength=20 class="pwdstyle" ></td>
+<td class=tabhead2><input type=hidden name="txtoldpwd" value=<%=pwd%> size=20 maxlength=20 class="pwdstyle" ></td>
 
 
 
@@ -228,12 +228,12 @@ try
 
 <td class=tabhead2><b>New Password</b></td>
 
-<td class=tabhead2><input type=password name=txtnpwd  onblur="its_whitespace2(this)" size=20 maxlength=20 class="pwdstyle" ></td></tr>
+<td class=tabhead2><input type=password name="txtnpwd"  onblur="its_whitespace2(this)" size=20 maxlength=20 class="pwdstyle" ></td></tr>
 
 </tr>
 </td>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value="Change" onclick="return CheckInput()">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  " ></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Change" onclick="return CheckInput()">&nbsp;&nbsp;&nbsp;&nbsp;<input type=reset value="  Clear  " ></td>
 </tr>
 </table>
 <tr>

@@ -797,7 +797,7 @@ function Close()
 
 
 
-<form name="f1" method=post  action="" enctype="multipart/form-data">
+<form name="f1" method=post  action="UpdateThieve1" enctype="multipart/form-data">
 <TABLE class=tabformat width="20%" border=0>
   <TBODY>
   <TR>
