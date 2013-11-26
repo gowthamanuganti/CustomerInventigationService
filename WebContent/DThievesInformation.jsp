@@ -142,7 +142,9 @@ a:hover {
 
 
 
-					<td class=tabhead1><img src="<%=rs.getBlob(6) %>"></td>
+					<%-- <td class=tabhead1><img src="<%=rs.getBlob(6) %>"></td> --%>
+					<td class=tabhead1><img id="image" width="90" height="100" src=displayphoto?userID=<%=tid %>> </img></td>
+					
 					<td class=tabhead1><a style="cursor: hand"
 						onclick="Update(<%=tid%>)">Update</a></td>
 				</tr>

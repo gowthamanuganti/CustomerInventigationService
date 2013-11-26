@@ -119,7 +119,7 @@ a:hover
 <HTML><HEAD><TITLE>Home Page</TITLE>
 <META>
 <BODY  onload="setfocus()" >
-<form name=f method="post" action="ShowPwd.jsp">
+<form name=f method="post" action="CheckCustomer1">
 <TABLE class=tabformat cellSpacing=1 cellPadding=2 width="100%" border=0>
   <TBODY>
   <TR>

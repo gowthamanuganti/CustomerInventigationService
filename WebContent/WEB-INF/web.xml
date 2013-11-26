@@ -9,6 +9,14 @@
 		<servlet-name>CustRegistration</servlet-name>
 		<url-pattern>/Register</url-pattern>
 	  </servlet-mapping>
+	  <servlet>
+ <servlet-name>one</servlet-name>
+ <servlet-class>DisplayPhotoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+ <servlet-name>one</servlet-name>
+ <url-pattern>/displayphoto</url-pattern>
+</servlet-mapping>
 
 	<servlet>
 	  

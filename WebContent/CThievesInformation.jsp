@@ -82,6 +82,7 @@ a:hover
 <td>
 
 <%
+String imgLen="";
 String cat=request.getParameter("catth");
 System.out.println("value is" +cat);
 try
@@ -129,6 +130,7 @@ String Yrs="Yrs";
 String Mns="Mns";
 String Dys="Dys";
 
+
 String wsp=rs.getString(4);
 int cnt=1;
 
@@ -166,7 +168,9 @@ String Wants=Yrs+Mns+Dys;
 
 
 
-<td class=tabhead1><img src="<%=rs.getBlob(6) %>"></td>
+<td class=tabhead1><img id="image" width="90" height="100" src=displayphoto?userID=<%=tid %>> </img>  </td>
+
+                                                        
  
 </tr>
 <%
